@@ -10,8 +10,11 @@ export default function Starting() {
 
         <Text>phone</Text>
         <TextInput  placeholder="phone" />
-        <Button title="reset" />
-        <Button title="signup" />
+        <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
+          <Button title="reset" />
+          <Button title="signup" />
+        </View>
+        
     </View>
     
     
