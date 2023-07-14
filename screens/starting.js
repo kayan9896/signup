@@ -15,14 +15,12 @@ export default function Starting({store,confirmpage}) {
     setW2('')
   }
   const valid=()=>{
-    if(isNaN(tp) || tp.length!=10)
-    {
-      setW1("please fill phone")
-    }
-    if(!tm.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
-    {
-      setW2("please fill mail")
-    }
+    if(isNaN(tp) || tp.length!=10){
+      setW1("please fill a valid phone")
+    }else{setW1("")}
+    if(!tm.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)){
+      setW2("please fill a valid email")
+    }else{setW2("")}
     if((!isNaN(tp)&&tp.length===10)&&tm.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
     {
       store(tm,tp)

@@ -3,7 +3,8 @@ import React from 'react'
 
 export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
   return (
-    <Modal style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }} visible={show}>
+    <Modal visible={show}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
       <Text>You have entered:{'\n'}
         {mail}{'\n'}
         {phone}{'\n'}
@@ -16,9 +17,9 @@ export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
           finishpage()
           done()
           }}/>
-        <Button title="Finish later" onPress={()=>{resetshow,finishpage}}/>
+        <Button title="Finish later" onPress={()=>{resetshow(),finishpage()}}/>
         
-        
+      </View>
     </Modal>
   )
 }

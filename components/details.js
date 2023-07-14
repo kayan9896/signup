@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Starting from '../screens/starting';
 import Confirm from '../screens/confirm';
@@ -19,10 +19,13 @@ export default function Details() {
       setShowup(true)
     }
     function hide(){ setShowup(false)} 
-    const screen=0
+    
     if(showfinish){
-      return(<Finish ld={p[p.length-1]} showfn={showfinish} resetfinish={()=>{setShowfinish('false')}}></Finish>)
-    }else{
+      return(
+        <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
+        <Finish ld={p[p.length-1]} showfn={showfinish} resetfinish={()=>{setShowfinish(false), setemail('','')}} don={don}></Finish>
+        </View>
+    )}else{
     return (
       <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
         <Starting store={setemail} confirmpage={showconfirm}></Starting>

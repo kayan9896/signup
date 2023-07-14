@@ -6,7 +6,7 @@ import Details from './components/details';
 export default function App() {
   
   return (
-    <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
+    <View style={{flex:1, justifyContent:'center',alignItems:'center', paddingTop:20}}>
       <Text style={{justifyContent:'space-evenly'}}>Sign up</Text>
       <Details></Details>
     </View>
