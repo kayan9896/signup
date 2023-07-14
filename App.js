@@ -4,29 +4,28 @@ import React from 'react';
 import Starting from './screens/starting';
 import Confirm from './screens/confirm';
 import Finish from './screens/finish';
+
 export default function App() {
   const [m, setM] = React.useState('')
   const [p, setP] = React.useState('')
+  const [showup, setShowup] = React.useState(false)
   const sc=1;
-  const changesc=(a,b)=>{
+  const setemail=(a,b)=>{
     setM(a)
     setP(b)
-    console.log(m,p);
   }
+  function showconfirm(){
+    setShowup(true)
+  }
+  function hide(){ setShowup(false)} 
   if(sc===1){
   return (
     <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
       <Text style={{justifyContent:'space-evenly'}}>Sign up</Text>
-      <Starting stsc={changesc}></Starting>
+      <Starting store={setemail} confirmpage={showconfirm}></Starting>
+      <Confirm mail={m} phone={p} show={showup} resetshow={hide}></Confirm>
     </View>
   );}
-  else if(sc===2) {
-    return (
-      <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
-        <Text style={{justifyContent:'space-evenly'}}>Sign up</Text>
-        <Confirm mail={m} phone={p}></Confirm>
-      </View>
-    );}
   else{return (
     <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
       <Text style={{justifyContent:'space-evenly'}}>Sign up</Text>

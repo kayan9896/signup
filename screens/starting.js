@@ -1,7 +1,7 @@
 import { View, Text, TextInput, Button } from 'react-native'
 import React from 'react'
 
-export default function Starting({stsc}) {
+export default function Starting({store,confirmpage}) {
   const [tm, setTm] = React.useState('')
   const [tp, setTp] = React.useState('')
   const [w1, setW1] = React.useState('')
@@ -25,7 +25,8 @@ export default function Starting({stsc}) {
     }
     if((!isNaN(tp)&&tp.length===10)&&tm.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
     {
-      stsc(tm,tp)
+      store(tm,tp)
+      confirmpage() 
     }
   }
   return (

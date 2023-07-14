@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text,Image } from 'react-native'
 import React from 'react'
 
 export default function Finish({ld}) {
@@ -8,6 +8,7 @@ export default function Finish({ld}) {
       <View>
       <Text>Thank you</Text>
       <Text>your id is {ld}</Text>
+      <Image source={{url:`https://picsum.photos/id/${ld}/100/100`}} style={{height:100, width:100}}/>
     </View>
     )
   }else{
