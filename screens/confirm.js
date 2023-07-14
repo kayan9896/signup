@@ -15,9 +15,9 @@ export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
         <Button title="Confirm" onPress={()=>{
           resetshow()
           finishpage()
-          done()
+          done(true)
           }}/>
-        <Button title="Finish later" onPress={()=>{resetshow(),finishpage()}}/>
+        <Button title="Finish later" onPress={()=>{resetshow(),finishpage(),done(false)}}/>
         
       </View>
     </Modal>

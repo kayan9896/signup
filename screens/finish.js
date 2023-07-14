@@ -1,8 +1,8 @@
 import { View, Text,Image, Modal,Button } from 'react-native'
 import React from 'react'
 
-export default function Finish({ld,showfn,resetfinish,don}) {
-  if(don===1){
+export default function Finish({ld,resetfinish,don}) {
+  if(don){
     return(
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
         <Text>Thank you</Text>
