@@ -3,12 +3,12 @@ import React from 'react'
 
 export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
   return (
-    <Modal visible={show} animationType='fade'>
+    <Modal visible={show}>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
-      <Text>You have entered:{'\n'}
-        {mail}{'\n'}
-        {phone}{'\n'}
-        Please confirm they are correct.
+        <Text>You have entered:{'\n'}
+          {mail}{'\n'}
+          {phone}{'\n'}
+          Please confirm they are correct.
         </Text>
         
         <Button title="Go back" onPress={resetshow}/>

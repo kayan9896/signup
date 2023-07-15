@@ -6,10 +6,14 @@ import Confirm from '../screens/confirm';
 import Finish from '../screens/finish';
 
 export default function Details() {
+    //store the received email and phone
     const [m, setM] = React.useState('')
     const [p, setP] = React.useState('')
+    //boolean flag to show/hide the confirm modal
     const [showup, setShowup] = React.useState(false)
+    //boolean flag to show/hide the finish screen
     const [showfinish, setShowfinish] = React.useState(false)
+    //boolean flag to decide the page in finish screen
     const [don, setDon] = React.useState(true)
     const setemail=(a,b)=>{
       setM(a)
@@ -20,6 +24,7 @@ export default function Details() {
     }
     function hide(){ setShowup(false)} 
     const finished=(a)=>{  setDon(a)  } 
+    //conditional rendering based on the boolean flags showfinish
     if(showfinish){
       return(
         <View style={styles.detailcontainer}>

@@ -2,6 +2,7 @@ import { View, Text,Image, Modal,Button } from 'react-native'
 import React from 'react'
 
 export default function Finish({ld,resetfinish,don}) {
+  //conditional rendering based on the boolean flags don
   if(don){
     return(
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
