@@ -30,13 +30,13 @@ export default function Starting({store,confirmpage}) {
   return (
     
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
-        <Text>mail</Text>
-        <TextInput  placeholder="mail" value={tm} onChangeText={showm}/>
+        <Text>email</Text>
+        <TextInput style={{borderBottomWidth:1}} placeholder="email                               " value={tm} onChangeText={showm}/>
         <Text>{w2}</Text>
         <Text>phone</Text>
-        <TextInput  placeholder="phone" value={tp} onChangeText={showp}/>
+        <TextInput style={{borderBottomWidth:1}} placeholder="phone                               " value={tp} onChangeText={showp}/>
         <Text>{w1}</Text>
-        <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
+        <View style={{flexDirection:'row',justifyContent:'space-between'}}>
           <Button title="reset" onPress={rst}/>
           <Button title="signup" onPress={valid}/>
         </View>

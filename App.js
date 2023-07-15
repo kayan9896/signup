@@ -6,8 +6,10 @@ import Details from './components/details';
 export default function App() {
   
   return (
-    <View style={{flex:1, justifyContent:'center',alignItems:'center', paddingTop:20}}>
-      <Text style={{justifyContent:'space-evenly'}}>Sign up</Text>
+    <View style={{flex:1, paddingTop:30}}>
+      <View style={{alignItems:'center',marginHorizontal:150,borderWidth: 3}}>
+        <Text >Sign up</Text>
+      </View>
       <Details></Details>
     </View>
   );

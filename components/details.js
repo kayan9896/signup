@@ -19,15 +19,15 @@ export default function Details() {
       setShowup(true)
     }
     function hide(){ setShowup(false)} 
-    const finished=(a)=>{  setDon(a),console.log(a);  } 
+    const finished=(a)=>{  setDon(a)  } 
     if(showfinish){
       return(
-        <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
+        <View style={styles.detailcontainer}>
         <Finish ld={p[p.length-1]} resetfinish={()=>{setShowfinish(false), setemail('','')}} don={don}></Finish>
         </View>
     )}else{
     return (
-      <View style={{flex:1, justifyContent:'center',paddingTop:10}}>
+      <View style={styles.detailcontainer}>
         <Starting store={setemail} confirmpage={showconfirm}></Starting>
         <Confirm mail={m} phone={p} show={showup} resetshow={hide} finishpage={function(){setShowfinish(true)}} done={finished}></Confirm>
         
@@ -36,10 +36,8 @@ export default function Details() {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    detailcontainer: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
       justifyContent: 'center',
     },
   });

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
   return (
-    <Modal visible={show}>
+    <Modal visible={show} animationType='fade'>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
       <Text>You have entered:{'\n'}
         {mail}{'\n'}

@@ -7,8 +7,8 @@ export default function Finish({ld,resetfinish,don}) {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
         <Text>Thank you</Text>
         <Text>The image is based on your last digit {ld}</Text>
-        <Image source={{url:`https://picsum.photos/id/${ld}/100/100`}} style={{height:100, width:100}}/>
-        <Button title={'start agian'} onPress={()=>{resetfinish()}}/>
+        <Image source={{uri:`https://picsum.photos/id/${ld}/100/100`,height:100, width:100}}/>
+        <Button title={'start again'} onPress={()=>{resetfinish()}}/>
       </View>
     )
   }else{
@@ -16,7 +16,7 @@ export default function Finish({ld,resetfinish,don}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
       <Text>Sorry to see you go</Text>
       <Image source={require("../unamused.png")} style={{height:100, width:100}}/>
-      <Button title={'start agian'} onPress={()=>{resetfinish()}}/>
+      <Button title={'start again'} onPress={()=>{resetfinish()}}/>
     </View>
   )}
 }
