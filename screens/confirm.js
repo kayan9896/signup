@@ -3,8 +3,15 @@ import React from 'react'
 
 export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
   return (
-    <Modal visible={show}>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
+    <Modal visible={show} transparent={true}>
+      <View style={{ flex: 0.5,
+      justifyContent: 'center',
+      margin:30,
+      //style for rounded corner and shadow
+      borderRadius: 10,
+      borderColor:'grey',
+      backgroundColor:'grey',
+      borderWidth:10, }}>
         <Text>You have entered:{'\n'}
           {mail}{'\n'}
           {phone}{'\n'}
