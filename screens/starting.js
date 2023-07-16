@@ -1,12 +1,17 @@
 import { View, Text, TextInput, Button } from 'react-native'
 import React from 'react'
 import Card from '../components/card'
+import Input from '../components/input'
+import helper from '../components/helper'
 
 export default function Starting({store,confirmpage}) {
-  //const to display email, phone and warning
+  //const to display email
   const [tm, setTm] = React.useState('')
+  //const to display phone
   const [tp, setTp] = React.useState('')
+  //warning message for phone
   const [w1, setW1] = React.useState('')
+  //warning message for email
   const [w2, setW2] = React.useState('')
   const showm=(e)=>{setTm(e)}
   const showp=(e)=>{setTp(e)}
@@ -28,44 +33,28 @@ export default function Starting({store,confirmpage}) {
     }else{setW2("")}
     if((!isNaN(tp)&&tp.length===10)&&tm.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
     {
+      //store the input in parent component
       store(tm,tp)
+      //navigate to confirm page
       confirmpage() 
     }
   }
   return (
     <View style={{flex:1}}>
-    <View style={{alignItems:'center',marginHorizontal:150,borderWidth: 3}}>
-        <Text >Sign up</Text>
+      <View style={helper.titlecontainer}>
+          <Text >Sign up</Text>
       </View>
-    <View style={{
-      flex: 0.5,
-      justifyContent: 'center',
-      margin:30,
-      //style for rounded corner and shadow
-      borderRadius: 10,
-      borderColor:'grey',
-      borderWidth:10,
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 4,
-      	height: 4,
-      },
-      shadowOpacity: 0.58,
-      elevation: 14,
-    }}>
-    <Card>
-        <Text>email</Text>
-        <TextInput style={{borderBottomWidth:1}} placeholder="email                               " value={tm} onChangeText={showm}/>
-        <Text>{w2}</Text>
-        <Text>phone</Text>
-        <TextInput style={{borderBottomWidth:1}} placeholder="phone                               " value={tp} onChangeText={showp}/>
-        <Text>{w1}</Text>
-        <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-          <Button title="reset" onPress={rst}/>
-          <Button title="signup" onPress={valid}/>
-        </View>
-    </Card>
-    </View>
+      <View style={helper.cardcontainer}>
+        <Card>
+            <Input name={'email'} warning={w2} val={tm} show={showm}/>
+            <Input name={'phone'} warning={w1} val={tp} show={showp}/>
+            <View style={{flexDirection:'row'}}>
+              <Button title="reset" onPress={rst}/>
+              <View style={helper.space} />
+              <Button title="signup" onPress={valid}/>
+            </View>
+        </Card>
+      </View>
     </View>
   )
 }

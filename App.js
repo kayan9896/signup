@@ -3,15 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Details from './components/details';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import helper, { colour } from './components/helper';
 
 export default function App() {
   
   return (
-    <View style={styles.container}>
+    <View style={helper.container}>
       <LinearGradient
         // Background Linear Gradient
-        colors={['#ffffff', '#3b5998', '#192f6a']}
+        colors={[colour.white, colour.lightblue, colour.darkblur]}
         style={{flex:1}}>
       
       <Details></Details>
@@ -19,9 +19,4 @@ export default function App() {
     </View>
   );
 }
-  
 
-
-const styles = StyleSheet.create({
-  container: {flex:1, paddingTop:30}, 
-});

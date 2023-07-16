@@ -38,21 +38,3 @@ export default function Details() {
     );}
 }
 
-const styles = StyleSheet.create({
-    detailcontainer: {
-      flex: 0.5,
-      justifyContent: 'center',
-      margin:30,
-      //style for rounded corner and shadow
-      borderRadius: 10,
-      borderColor:'grey',
-      borderWidth:10,
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 4,
-      	height: 4,
-      },
-      shadowOpacity: 0.58,
-      elevation: 14,
-    },
-  });
