@@ -1,5 +1,6 @@
 import { View, Text, TextInput, Button } from 'react-native'
 import React from 'react'
+import Card from '../components/card'
 
 export default function Starting({store,confirmpage}) {
   //const to display email, phone and warning
@@ -32,8 +33,27 @@ export default function Starting({store,confirmpage}) {
     }
   }
   return (
-    
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',backgroundColor:'grey' }}>
+    <View style={{flex:1}}>
+    <View style={{alignItems:'center',marginHorizontal:150,borderWidth: 3}}>
+        <Text >Sign up</Text>
+      </View>
+    <View style={{
+      flex: 0.5,
+      justifyContent: 'center',
+      margin:30,
+      //style for rounded corner and shadow
+      borderRadius: 10,
+      borderColor:'grey',
+      borderWidth:10,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 4,
+      	height: 4,
+      },
+      shadowOpacity: 0.58,
+      elevation: 14,
+    }}>
+    <Card>
         <Text>email</Text>
         <TextInput style={{borderBottomWidth:1}} placeholder="email                               " value={tm} onChangeText={showm}/>
         <Text>{w2}</Text>
@@ -44,6 +64,8 @@ export default function Starting({store,confirmpage}) {
           <Button title="reset" onPress={rst}/>
           <Button title="signup" onPress={valid}/>
         </View>
+    </Card>
+    </View>
     </View>
   )
 }

@@ -27,12 +27,10 @@ export default function Details() {
     //conditional rendering based on the boolean flags showfinish
     if(showfinish){
       return(
-        <View style={styles.detailcontainer}>
         <Finish ld={p[p.length-1]} resetfinish={()=>{setShowfinish(false), setemail('','')}} don={don}></Finish>
-        </View>
     )}else{
     return (
-      <View style={styles.detailcontainer}>
+      <View style={{flex:1}}>
         <Starting store={setemail} confirmpage={showconfirm}></Starting>
         <Confirm mail={m} phone={p} show={showup} resetshow={hide} finishpage={function(){setShowfinish(true)}} done={finished}></Confirm>
         
@@ -55,5 +53,6 @@ const styles = StyleSheet.create({
       	height: 4,
       },
       shadowOpacity: 0.58,
+      elevation: 14,
     },
   });

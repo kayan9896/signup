@@ -1,9 +1,14 @@
 import { View, Text, Button, Modal } from 'react-native'
 import React from 'react'
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
   return (
     <Modal visible={show} transparent={true}>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={['#ffffff', '#3b5998', '#192f6a']}
+        style={{flex:1}}>
       <View style={{ flex: 0.5,
       justifyContent: 'center',
       margin:30,
@@ -27,6 +32,8 @@ export default function Confirm({mail,phone,show,resetshow,finishpage,done}) {
         <Button title="Finish later" onPress={()=>{resetshow(),finishpage(),done(false)}}/>
         
       </View>
+      </LinearGradient>
+      
     </Modal>
   )
 }

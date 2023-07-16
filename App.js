@@ -13,9 +13,7 @@ export default function App() {
         // Background Linear Gradient
         colors={['#ffffff', '#3b5998', '#192f6a']}
         style={{flex:1}}>
-      <View style={styles.titlecontainer}>
-        <Text >Sign up</Text>
-      </View>
+      
       <Details></Details>
       </LinearGradient>
     </View>
@@ -25,6 +23,5 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-  container: {flex:1, paddingTop:30},
-  titlecontainer: {alignItems:'center',marginHorizontal:150,borderWidth: 3}
+  container: {flex:1, paddingTop:30}, 
 });
